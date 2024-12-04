@@ -16,26 +16,33 @@ const CommentSection: React.FC<CommentSectionProps> = ({ sport, onAddComment }) 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
+    // Vérifier si l'utilisateur est connecté
+    const user = JSON.parse(localStorage.getItem('user') || 'null');
+    if (!user) {
+      setError('You must be logged in to post a comment.');
+      return;
+    }
+
     if (!content.trim() || !author.trim()) {
       setError('Both fields are required.');
       return;
     }
-  
+
     if (isSubmitting) return; // Empêche un double clic
     setIsSubmitting(true);
-  
+
     try {
       const response = await fetch(`/api/sports/${sport.name}/comments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content, author }),
       });
-  
+
       if (!response.ok) {
         throw new Error('Failed to submit comment');
       }
-  
+
       // Réinitialiser les champs après ajout
       setContent('');
       setAuthor('');
@@ -47,7 +54,6 @@ const CommentSection: React.FC<CommentSectionProps> = ({ sport, onAddComment }) 
       setIsSubmitting(false);
     }
   };
-  
 
   return (
     <div className="mt-16">
@@ -94,7 +100,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({ sport, onAddComment }) 
       </form>
 
       <div className="space-y-6">
-        {sport.comments?.map((comment: Comment) => (
+        {[...(sport.comments || [])].reverse().map((comment: Comment) => (
           <div key={comment.id} className="bg-white rounded-lg shadow-md p-6">
             <p className='text-gray-700'>{comment.author}</p>
             <p className="text-gray-600">{comment.content}</p>
