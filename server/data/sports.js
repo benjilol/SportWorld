@@ -1,0 +1,202 @@
+export const sportsData = [
+  {
+    id: 'football',
+    name: 'Football',
+    description: 'The most popular sport in the world, combining passion and technique.',
+    history: 'Modern football was born in England in the 19th century. Codified in 1863 with the creation of the Football Association, it quickly spread worldwide to become the number one sport in many countries.',
+    rules: [
+      '11 players per team on the field',
+      'Two halves of 45 minutes',
+      'No hand use except for the goalkeeper',
+      'Win = 3 points, Draw = 1 point, Loss = 0 points',
+    ],
+    topTeams: [
+      {
+        id: 'real-madrid',
+        name: 'Real Madrid',
+        country: 'Spain',
+        achievements: ['14 Champions Leagues', '35 Spanish Championships'],
+        imageUrl: 'https://static.brusheezy.com/system/resources/previews/000/014/339/non_2x/real-madrid-logo-photoshop-psds.jpg',
+      },
+    ],
+    topPlayers: [
+      {
+        id: 'messi',
+        name: 'Lionel Messi',
+        nationality: 'Argentina',
+        achievements: ['8 Ballon d\'Or awards', '2022 World Cup'],
+        imageUrl: 'https://cdn.vox-cdn.com/thumbor/QRepCGYJ_7jaxWZZu5MrHVnKC10=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/25481462/2155658434.jpg',
+        active: true,
+      },
+    ],
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOxITiGZuLkhpVxvQJp2tKaPNk-zCLxvicXg&s',
+  },
+  {
+    id: 'handball',
+    name: 'Handball',
+    description: 'A fast and dynamic team sport.',
+    history: 'Originating in Northern Europe, modern handball was codified in the early 20th century and became an Olympic sport in 1936.',
+    rules: [
+      '7 players per team on the field',
+      'Two halves of 30 minutes',
+      'The ball can only be touched with hands',
+      'Players cannot hold the ball for more than 3 seconds',
+    ],
+    topTeams: [
+      {
+        id: 'psg-handball',
+        name: 'PSG Handball',
+        country: 'France',
+        achievements: ['10 French Championships', 'League Cup'],
+        imageUrl: 'https://images.unsplash.com/photo-1519919772930-7d796301f27d?auto=format&fit=crop&q=80&w=1000',
+      },
+    ],
+    topPlayers: [
+      {
+        id: 'karabatic',
+        name: 'Nikola Karabatic',
+        nationality: 'France',
+        achievements: ['3 World Championship titles', '2 Olympic gold medals'],
+        imageUrl: 'https://images.unsplash.com/photo-1519919772930-7d796301f27d?auto=format&fit=crop&q=80&w=1000',
+        active: true,
+      },
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1567101932404-76bcdcb759a4?auto=format&fit=crop&q=80&w=1000',
+  },
+  {
+    id: 'rugby',
+    name: 'Rugby',
+    description: 'An intense and strategic contact sport.',
+    history: 'Born in the 19th century in England, rugby is divided into two main disciplines: Rugby Union and Rugby League.',
+    rules: [
+      '15 players per team on the field',
+      'Matches divided into two halves of 40 minutes',
+      'The ball can only be passed backward',
+      'Tries are worth 5 points',
+    ],
+    topTeams: [
+      {
+        id: 'all-blacks',
+        name: 'All Blacks',
+        country: 'New Zealand',
+        achievements: ['3 World Cups', 'Multiple Tri-Nations titles'],
+        imageUrl: 'https://images.unsplash.com/photo-1508233549339-434a1f7e60d9?auto=format&fit=crop&q=80&w=1000',
+      },
+    ],
+    topPlayers: [
+      {
+        id: 'carter',
+        name: 'Dan Carter',
+        nationality: 'New Zealand',
+        achievements: ['2 World Cups', 'Top scorer in rugby history'],
+        imageUrl: 'https://images.unsplash.com/photo-1508233549339-434a1f7e60d9?auto=format&fit=crop&q=80&w=1000',
+        active: false,
+      },
+    ],
+    imageUrl: 'https://wallpapers.com/images/high/rugby-game-photography-dmihnhn8vvwalv3y.webp',
+  },
+  {
+    id: 'basketball',
+    name: 'Basketball',
+    description: 'A fast and technical sport played with a ball and a hoop.',
+    history: 'Invented by James Naismith in 1891 in the United States, basketball has become a globally popular sport.',
+    rules: [
+      '5 players per team on the court',
+      'Games divided into four quarters of 10 or 12 minutes',
+      '3-point shots are beyond the 6.75m line',
+      '24 seconds to shoot after gaining possession',
+    ],
+    topTeams: [
+      {
+        id: 'lakers',
+        name: 'Los Angeles Lakers',
+        country: 'United States',
+        achievements: ['17 NBA championships', 'Numerous MVPs'],
+        imageUrl: 'https://images.unsplash.com/photo-1589556651494-cfe30b6949bf?auto=format&fit=crop&q=80&w=1000',
+      },
+    ],
+    topPlayers: [
+      {
+        id: 'jordan',
+        name: 'Michael Jordan',
+        nationality: 'United States',
+        achievements: ['6 NBA titles', '5 regular-season MVPs'],
+        imageUrl: 'https://images.unsplash.com/photo-1589556651494-cfe30b6949bf?auto=format&fit=crop&q=80&w=1000',
+        active: false,
+      },
+    ],
+    imageUrl: 'https://wallpaperaccess.com/full/719885.jpg',
+  },
+  {
+    id: 'judo',
+    name: 'Judo',
+    description: 'A martial art and Olympic sport based on technique and discipline.',
+    history: 'Created by Jigoro Kano in Japan in 1882, judo became an Olympic sport in 1964. It focuses on controlling the opponent’s force and self-mastery.',
+    rules: [
+      'Fighters wear a judogi',
+      'Points are awarded for throws or holds',
+      'An ippon (full point) ends the match',
+      'Matches last 4 minutes for men and women',
+    ],
+    topTeams: [
+      {
+        id: 'japan-national-team',
+        name: 'Japan National Team',
+        country: 'Japan',
+        achievements: ['Numerous Olympic gold medals', 'Global domination in multiple categories'],
+        imageUrl: 'https://images.unsplash.com/photo-1522083165196-555ac3609131?auto=format&fit=crop&q=80&w=1000',
+      },
+    ],
+    topPlayers: [
+      {
+        id: 'riner',
+        name: 'Teddy Riner',
+        nationality: 'France',
+        achievements: ['10 World Championship titles', '2 Olympic gold medals'],
+        imageUrl: 'https://media.gettyimages.com/id/2164985016/photo/paris-france-gold-medalist-teddy-riner-of-team-france-celebrates-on-the-podium-at-judo-mens.jpg?s=612x612&w=0&k=20&c=IpR1NVIAheAkfjxZXIF6u-Sod_09gQkmWCY5oC7lWcc=',
+        active: true,
+      },
+    ],
+    imageUrl: 'https://e0.pxfuel.com/wallpapers/100/34/desktop-wallpaper-judo-background.jpg',
+  },
+  {
+    id: 'tennis',
+    name: 'Tennis',
+    description: 'An individual or doubles sport where players compete by hitting a ball over a net.',
+    history: 'Modern tennis was codified in England in the 19th century. Today, it is played on grass, clay, and hard courts.',
+    rules: [
+      'Matches can be best of 3 or 5 sets',
+      'A player must win 4 points to win a game',
+      'Service alternates every game',
+      'Faults include balls out of bounds and double faults on serve',
+    ],
+    topTeams: [
+      {
+        id: 'swiss-team',
+        name: 'Swiss Davis Cup Team',
+        country: 'Switzerland',
+        achievements: ['2014 Davis Cup winners'],
+        imageUrl: 'https://images.unsplash.com/photo-1601474762301-d94238b4b976?auto=format&fit=crop&q=80&w=1000',
+      },
+    ],
+    topPlayers: [
+      {
+        id: 'federer',
+        name: 'Roger Federer',
+        nationality: 'Switzerland',
+        achievements: ['20 Grand Slam titles', 'Record weeks as world No. 1'],
+        imageUrl: 'https://images.unsplash.com/photo-1601474762301-d94238b4b976?auto=format&fit=crop&q=80&w=1000',
+        active: false,
+      },
+      {
+        id: 'serena',
+        name: 'Serena Williams',
+        nationality: 'United States',
+        achievements: ['23 Grand Slam titles', '4 Olympic gold medals'],
+        imageUrl: 'https://images.unsplash.com/photo-1596484557250-50e80f73e1dc?auto=format&fit=crop&q=80&w=1000',
+        active: false,
+      },
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&q=80&w=1000',
+  },
+];

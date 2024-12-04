@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model Sport {
+  id            String    @id @default(cuid())
+  name          String    @unique
+  description   String
+  history       String
+  imageUrl      String
+  rules         Rule[]
+  teams         Team[]    @relation("AllTeams") // Nom pour la relation des équipes multiples
+  players       Player[]
+  comments      Comment[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  bestTeam      Team?     @relation("BestTeam", fields: [bestTeamId], references: [id]) // Nom pour la meilleure équipe
+  bestTeamId    String?   @unique // Champ unique pour la relation one-to-one
+  bestPlayer    Player?   @relation("BestPlayer", fields: [bestPlayerId], references: [id]) // Nom pour le meilleur joueur
+  bestPlayerId  String?   @unique // Champ unique pour la relation one-to-one
+}
+
+model Rule {
+  id        String   @id @default(cuid())
+  content   String
+  sport     Sport    @relation(fields: [sportId], references: [id])
+  sportId   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Team {
+  id           String   @id @default(cuid())
+  name         String
+  country      String
+  achievements String
+  imageUrl     String
+  sport        Sport    @relation("AllTeams", fields: [sportId], references: [id]) // Nom correspondant pour les équipes multiples
+  sportId      String
+  isBestFor    Sport?   @relation("BestTeam") // Champ inverse pour la meilleure équipe
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Player {
+  id           String   @id @default(cuid())
+  name         String
+  nationality  String
+  achievements String
+  imageUrl     String
+  active       Boolean  @default(true)
+  sport        Sport    @relation(fields: [sportId], references: [id])
+  sportId      String
+  isBestFor    Sport?   @relation("BestPlayer") // Champ inverse pour le meilleur joueur
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  content   String
+  author    String   @default("Anonymous")
+  sport     Sport    @relation(fields: [sportId], references: [id])
+  sportId   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
