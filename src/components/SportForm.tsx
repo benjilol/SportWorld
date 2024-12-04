@@ -28,6 +28,8 @@ const SportForm: React.FC<SportFormProps> = ({ sport, onCancel }) => {
       history,
       imageUrl,
       rules: filteredRules,
+      topTeams: sport?.topTeams,
+      topPlayers: sport?.topPlayers
     };
 
     try {
@@ -100,6 +102,24 @@ const SportForm: React.FC<SportFormProps> = ({ sport, onCancel }) => {
           <ul className="list-disc pl-5">
             {currentSport.rules.map((rule, index) => (
               <li key={index}>{rule}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mb-4">
+          <h3 className="text-xl font-semibold mb-2">Top Teams</h3>
+          <ul className="list-disc pl-5">
+            {currentSport.topTeams.map((team, index) => (
+              <li key={index}>{team}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mb-4">
+          <h3 className="text-xl font-semibold mb-2">Top Players</h3>
+          <ul className="list-disc pl-5">
+            {currentSport.topPlayers.map((player, index) => (
+              <li key={index}>{player}</li>
             ))}
           </ul>
         </div>
