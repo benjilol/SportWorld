@@ -107,9 +107,8 @@ const SportDetail: React.FC<SportDetailProps> = ({ isNew }) => {
         },
         body: JSON.stringify({
           ...sportData,
-          rules: sportData.rules || [],
-          topTeams: sportData.topTeams || [],
-          topPlayers: sportData.topPlayers || []
+          topTeams: sportData.topTeams || sport?.topTeams || [],
+          topPlayers: sportData.topPlayers || sport?.topPlayers || []
         }),
       });
       
